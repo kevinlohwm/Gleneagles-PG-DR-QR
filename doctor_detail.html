@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile - Gleneagles Hospital Penang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html"><img src="assets/images/gleneagles_logo.svg" alt="Gleneagles Hospital Penang Logo" id="logo"></a>
+            <span>General line: +604 222 9111</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Doctor Profile</h1>
+        <div class="doctor-profile-grid">
+            <div class="profile-image-section">
+                <img src="assets/images/placeholder_doctor.png" alt="Doctor Name" id="doctor-detail-photo" class="doctor-photo-detail">
+            </div>
+            <div class="profile-info-section">
+                <h2 id="doctor-detail-name">Dr. Sample Name</h2>
+                <p><strong>Type:</strong> <span id="doctor-detail-type">Resident</span></p>
+                <p><strong>Speciality:</strong> <span id="doctor-detail-speciality">Sample Speciality</span></p>
+                <h3>Qualifications</h3>
+                <p id="doctor-detail-qualifications">MBBS, MRCS, FRCS</p>
+                <h3>Languages Spoken</h3>
+                <p id="doctor-detail-languages">English, Malay, Mandarin</p>
+                <h3>Location / Suite No.</h3>
+                <p id="doctor-detail-location">Gleneagles Hospital Penang, Suite XXX</p>
+                <h3>Phone No.</h3>
+                <p id="doctor-detail-phone">+60X-XXX XXXX</p>
+                <a href="mailto:appointments@gleneaglespenang.com.my?subject=Appointment Request for Dr. Sample Name" class="request-appointment-btn" id="detail-request-appointment-btn">Request an Appointment</a>
+            </div>
+        </div>
+
+        <section id="clinical-hours-section">
+            <h3>Clinical Hours</h3>
+            <table id="clinical-hours-table">
+                <thead>
+                    <tr>
+                        <th>Days</th>
+                        <th>0830 - 1300</th>
+                        <th>1400 - 1630</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be populated by JavaScript or manually for sample -->
+                    <tr><td>Monday</td><td>&#10004;</td><td>&#10004;</td></tr>
+                    <tr><td>Tuesday</td><td></td><td>&#10004;</td></tr>
+                    <tr><td>Wednesday</td><td>&#10004;</td><td></td></tr>
+                    <tr><td>Thursday</td><td>&#10004;</td><td>&#10004;</td></tr>
+                    <tr><td>Friday</td><td></td><td>&#10004;</td></tr>
+                    <tr><td>Saturday</td><td>&#10004;</td><td></td></tr>
+                    <tr><td>Sunday</td><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="qr-code-section">
+            <h3>Save Doctor Details</h3>
+            <div id="qrcode">
+                <!-- QR code will be generated here by JavaScript -->
+                <p>(QR Code Placeholder)</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Gleneagles Hospital Penang. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/qrious.min.js"></script>
+</body>
+</html>
