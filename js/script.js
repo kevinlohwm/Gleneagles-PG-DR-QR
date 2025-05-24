@@ -128,7 +128,7 @@ const doctorsData = [
     {
         id: 7,
         name: "Mr. Buvanesvaran Tachina Moorthi",
-        photo: "assets/images/mr-buvanesvaran-tachina-moorthi.png",
+        photo: "assets/images/dr-buvanesvaran-tachina-moorthi.png",
         speciality: "General Surgery",
         type: "Resident",
         qualifications: "MBBS(Mal), MS(UKM), MRCS(Ire) FELLOWSHIP IN COLORECTAL SURGERY (Hull, England)",
