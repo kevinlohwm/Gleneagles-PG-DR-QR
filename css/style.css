@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-blue: #007bff;
+    --primary-blue-darker: #0056b3; /* For hover */
+    --secondary-teal: #20c997;
+    --secondary-teal-darker: #1aa07f; /* For hover */
+    --accent-orange: #fd7e14;
+    --accent-orange-darker: #e06804; /* For hover, if needed */
+    --neutral-dark-gray: #333333;
+    --neutral-medium-gray: #666666;
+    --neutral-light-gray: #f4f4f4;
+    --neutral-light-gray-darker: #e9e9e9; /* For hover on zebra stripes */
+    --neutral-white: #ffffff;
+    --border-color: #dddddd;
+    --border-radius-std: 4px; /* Standard border radius */
+
+    /* Spacing Units */
+    --space-xs: 0.25rem;  /* 4px */
+    --space-sm: 0.5rem;   /* 8px */
+    --space-md: 1rem;     /* 16px */
+    --space-lg: 1.5rem;   /* 24px */
+    --space-xl: 2rem;     /* 32px */
+    --space-xxl: 3rem;    /* 48px */
+}
+
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--neutral-dark-gray);
+    background-color: var(--neutral-white);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--neutral-dark-gray);
+    margin-top: 0; /* Reset default top margin for headings */
+    margin-bottom: var(--space-md); /* Consistent bottom margin for headings */
+    font-weight: 600;
+    line-height: 1.3; /* Slightly tighter line height for headings */
+}
+h1 { font-size: 2.25rem; margin-bottom: var(--space-lg); } /* Larger base H1 */
+h2 { font-size: 1.75rem; margin-bottom: var(--space-lg); } /* Larger base H2 */
+h3 { font-size: 1.25rem; margin-bottom: var(--space-md); } /* Base H3 */
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-md); /* Consistent side padding */
+    padding-right: var(--space-md);
+    overflow: hidden; /* Contains floats, though less common with modern layouts */
+}
+
+/* Header */
+header {
+    background: var(--neutral-white);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+#logo {
+    max-height: 50px;
+    flex-shrink: 0; /* Prevent logo from shrinking too much */
+}
+
+header span {
+    font-size: 0.9rem;
+    color: var(--neutral-medium-gray);
+    text-align: right;
+}
+
+/* Search Section */
+#search-section {
+    background: var(--neutral-light-gray);
+    padding: var(--space-xl) 0; /* Consistent vertical padding */
+}
+
+#search-section h2 {
+    text-align: center;
+    margin-bottom: var(--space-lg); /* Increased margin below h2 */
+    font-weight: 600;
+}
+
+#search-form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top for dropdown positioning */
+    gap: var(--space-md);
+}
+
+/* Wrapper for search inputs and their dropdowns */
+#search-form > div[style*="position: relative"] {
+    /* This targets the inline-styled div wrappers. 
+       It's better to use a class if possible, but this works for now. */
+    width: 30%; /* Match the original width of #search-name / #search-speciality */
+}
+
+
+#search-form input[type="text"] {
+    padding: 0.75em;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-std);
+    font-size: 1rem;
+    font-family: 'Work Sans', sans-serif;
+    color: var(--neutral-dark-gray);
+    width: 100%; /* Inputs take full width of their parent wrapper */
+}
+
+#search-form button {
+    padding: 0.75em 1.5em;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-std);
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    background-color: var(--primary-blue);
+    color: var(--neutral-white);
+    border: 1px solid var(--primary-blue);
+    height: calc(1.5em + (0.75em * 2) + 2px); /* Match height of input fields (padding + border) */
+}
+#search-form button:hover, #search-form button:focus {
+    background-color: var(--primary-blue-darker);
+    border-color: var(--primary-blue-darker);
+}
+
+/* Search Results Dropdown (Common Styles) */
+.search-results-dropdown {
+    display: none; /* Initially hidden */
+    position: absolute; 
+    top: 100%; /* Position below the input field */
+    left: 0;
+    right: 0; 
+    background-color: var(--neutral-white);
+    border: 1px solid var(--border-color);
+    border-top: none; 
+    z-index: 1000;
+    max-height: 300px; 
+    overflow-y: auto;
+    width: 100%; /* Take full width of its parent wrapper */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-bottom-left-radius: var(--border-radius-std);
+    border-bottom-right-radius: var(--border-radius-std);
+}
+
+/* Doctor List Item Specifics (if any beyond common item style) */
+.search-results-dropdown .doctor-list-item {
+    padding: 0.75em;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9em;
+    border-bottom: 1px solid var(--neutral-light-gray); /* Separator */
+}
+.search-results-dropdown .doctor-list-item:last-child {
+    border-bottom: none;
+}
+.search-results-dropdown .doctor-list-item:hover {
+    background-color: var(--neutral-light-gray);
+}
+.search-results-dropdown .doctor-list-item .item-name {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+.search-results-dropdown .doctor-list-item .item-speciality {
+    font-size: 0.9em;
+    color: var(--neutral-medium-gray);
+    display: block; 
+    margin-top: 2px;
+}
+
+/* Speciality List Item Specifics */
+.search-results-dropdown .speciality-list-item {
+    padding: 0.75em;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9em;
+    color: var(--neutral-dark-gray); /* Default text color */
+    border-bottom: 1px solid var(--neutral-light-gray); /* Separator */
+}
+.search-results-dropdown .speciality-list-item:last-child {
+    border-bottom: none;
+}
+.search-results-dropdown .speciality-list-item:hover {
+    background-color: var(--neutral-light-gray);
+    color: var(--primary-blue); /* Highlight on hover */
+}
+
+
+/* Doctor Listing Section */
+#doctor-listing-section {
+    padding: var(--space-xl) 0;
+    background-color: var(--neutral-white);
+}
+
+#doctor-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg); /* Consistent gap */
+}
+
+/* Doctor Card */
+.doctor-card {
+    background: var(--neutral-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.doctor-photo {
+    max-width: 120px;
+    border-radius: 50%;
+    margin-bottom: var(--space-md); /* Consistent margin */
+    border: 3px solid var(--neutral-light-gray);
+}
+
+.doctor-name { /* This is an h3 in the HTML */
+    font-size: 1.5rem; /* Overrides generic h3 for more prominence */
+    margin-bottom: var(--space-sm); /* Tighter margin below name */
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.doctor-speciality {
+    font-size: 1rem;
+    color: var(--neutral-medium-gray);
+    margin-bottom: var(--space-xs); /* Tighter margin */
+    font-weight: 400;
+}
+
+.doctor-type { /* Status Tag Styling */
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.85em;
+    font-weight: 500;
+    background-color: var(--accent-orange);
+    color: var(--neutral-white);
+    padding: 0.3em 0.6em;
+    border-radius: var(--border-radius-std);
+    display: inline-block;
+    margin-bottom: var(--space-md); /* Consistent margin below type */
+}
+
+.doctor-card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm); /* Consistent gap between buttons */
+    width: 100%;
+    margin-top: auto;
+}
+
+.doctor-card-buttons button,
+.doctor-card-buttons a {
+    padding: 0.6em 1.2em;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--border-radius-std);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.view-profile-btn {
+    background-color: var(--primary-blue);
+    color: var(--neutral-white);
+    border: 1px solid var(--primary-blue);
+}
+.view-profile-btn:hover, .view-profile-btn:focus {
+    background-color: var(--primary-blue-darker);
+    border-color: var(--primary-blue-darker);
+    color: var(--neutral-white);
+}
+
+.request-appointment-btn {
+    background-color: var(--secondary-teal);
+    color: var(--neutral-white);
+    border: 1px solid var(--secondary-teal);
+    display: block;
+}
+.request-appointment-btn:hover, .request-appointment-btn:focus {
+    background-color: var(--secondary-teal-darker);
+    border-color: var(--secondary-teal-darker);
+    color: var(--neutral-white);
+}
+
+
+/* Footer */
+footer {
+    background: var(--neutral-dark-gray);
+    color: var(--neutral-light-gray);
+    text-align: center;
+    padding: var(--space-lg) 0; /* Consistent vertical padding */
+    margin-top: var(--space-xl); /* Consistent margin from content above */
+}
+
+footer .container p {
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Main Content Area on Detail Page */
+main.container { /* Specific to doctor_detail.html's main area */
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    background-color: var(--neutral-white);
+}
+
+/* Doctor Detail Page Styles */
+.doctor-profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-xl); /* Increased gap */
+    margin-bottom: var(--space-xl);
+}
+
+.profile-image-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.doctor-photo-detail {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 3px solid var(--neutral-light-gray);
+}
+
+.profile-info-section h2 { /* #doctor-detail-name */
+    font-size: 2.25rem; /* Matches H1 */
+    color: var(--primary-blue);
+    margin-bottom: var(--space-md); /* Consistent margin */
+    font-weight: 600;
+}
+
+.profile-info-section h3 { /* Sub-headings like "Qualifications" */
+    font-size: 1.25rem; /* Matches H3 */
+    color: var(--neutral-dark-gray);
+    margin-top: var(--space-lg); /* More top margin for section separation */
+    margin-bottom: var(--space-sm); /* Tighter margin below sub-heading */
+    border-bottom: 1px solid var(--neutral-light-gray);
+    padding-bottom: var(--space-xs);
+    font-weight: 500;
+}
+
+.profile-info-section p {
+    margin-bottom: var(--space-sm); /* Consistent paragraph spacing */
+    line-height: 1.7;
+    color: var(--neutral-medium-gray);
+}
+.profile-info-section p strong {
+    color: var(--neutral-dark-gray);
+    font-weight: 500;
+}
+
+#detail-request-appointment-btn {
+    display: inline-block;
+    margin-top: var(--space-md);
+    padding: 0.8em 1.2em;
+    background-color: var(--secondary-teal);
+    color: var(--neutral-white);
+    border: 1px solid var(--secondary-teal);
+    text-decoration: none;
+    border-radius: var(--border-radius-std);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+#detail-request-appointment-btn:hover, #detail-request-appointment-btn:focus {
+    background-color: var(--secondary-teal-darker);
+    border-color: var(--secondary-teal-darker);
+    color: var(--neutral-white);
+}
+
+/* Clinical Hours & QR Code Sections */
+#clinical-hours-section,
+#qr-code-section {
+    margin-top: var(--space-xl); /* Ensure consistent top margin for these sections */
+    margin-bottom: var(--space-xl);
+}
+
+#clinical-hours-section h3, /* These are h3 elements */
+#qr-code-section h3 {
+    font-size: 1.5rem; /* Specific size for these, could use H2 settings too */
+    color: var(--neutral-dark-gray);
+    margin-bottom: var(--space-lg); /* Consistent margin below heading */
+    text-align: center;
+    font-weight: 600;
+}
+
+#clinical-hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-md); /* Margin from section heading */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    font-size: 0.9em;
+}
+
+#clinical-hours-table th,
+#clinical-hours-table td {
+    font-family: 'Work Sans', sans-serif;
+    border: 1px solid var(--border-color);
+    padding: 0.75em;
+    color: var(--neutral-medium-gray);
+    vertical-align: middle;
+}
+
+#clinical-hours-table th {
+    background-color: var(--neutral-light-gray);
+    font-weight: 600;
+    color: var(--neutral-dark-gray);
+}
+
+#clinical-hours-table th:first-child,
+#clinical-hours-table td:first-child {
+    text-align: left;
+}
+
+#clinical-hours-table th:not(:first-child),
+#clinical-hours-table td:not(:first-child) {
+    text-align: center;
+}
+
+#clinical-hours-table tbody tr:nth-child(odd) {
+    background-color: var(--neutral-white);
+}
+#clinical-hours-table tbody tr:nth-child(even) {
+    background-color: var(--neutral-light-gray);
+}
+#clinical-hours-table tbody tr:hover {
+    background-color: var(--neutral-light-gray-darker);
+}
+
+
+#qrcode {
+    margin: var(--space-md) auto; /* Consistent margin */
+    padding: var(--space-lg);
+    border: 1px dashed var(--neutral-medium-gray);
+    width: fit-content;
+    min-width: 160px;
+    min-height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--neutral-light-gray);
+}
+
+#qrcode img,
+#qrcode canvas {
+    display: block;
+    margin: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .doctor-profile-grid {
+        grid-template-columns: 1fr 1.5fr; /* Adjust ratio for tablets */
+        gap: var(--space-lg);
+    }
+    h1, .profile-info-section h2 { font-size: 2rem; } /* Adjust H1/equivalent for tablets */
+    h2, #search-section h2 { font-size: 1.6rem; } /* Adjust H2/equivalent for tablets */
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Slightly more width for small devices */
+        padding-left: var(--space-sm);
+        padding-right: var(--space-sm);
+    }
+
+    h1, .profile-info-section h2 { font-size: 1.8rem; }
+    h2, #search-section h2 { font-size: 1.5rem; }
+    h3, .doctor-name, #clinical-hours-section h3, #qr-code-section h3 { font-size: 1.25rem; }
+
+    /* Adjust search form layout on mobile */
+    #search-form {
+        flex-direction: column;
+        align-items: stretch; /* Make children full width */
+        gap: var(--space-sm);
+    }
+    /* Ensure wrapper for search name/speciality takes full width in stacked layout */
+    #search-form > div[style*="position: relative"] {
+        width: 100%; 
+    }
+    /* #search-name, #search-speciality are already width: 100% of their wrapper */
+    
+    #search-form button {
+        width: 100%; 
+    }
+
+
+    #doctor-cards-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-md); /* Slightly reduced gap for stacked cards */
+    }
+
+    header .container {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    #logo {
+        max-height: 40px;
+    }
+
+    .doctor-profile-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .profile-image-section {
+        align-items: center;
+        margin-bottom: var(--space-md);
+    }
+
+    .doctor-photo-detail {
+        max-width: 250px;
+    }
+
+    #clinical-hours-section {
+        overflow-x: auto;
+    }
+    #clinical-hours-table {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Base for mobile */
+    }
+    /* Adjusted heading sizes for very small screens */
+    h1, .profile-info-section h2 { font-size: 1.6rem; }
+    h2, #search-section h2 { font-size: 1.3rem; }
+    h3, .doctor-name, #clinical-hours-section h3, #qr-code-section h3 { font-size: 1.1rem; }
+
+
+    #search-form input[type="text"],
+    #search-form button,
+    .doctor-card-buttons button,
+    .doctor-card-buttons a {
+        font-size: 0.9rem;
+        padding: 0.7em 1em;
+    }
+
+    main.container { /* More specific selector for main content padding */
+        padding-top: var(--space-lg);
+        padding-bottom: var(--space-lg);
+    }
+
+    #detail-request-appointment-btn {
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    #clinical-hours-table th,
+    #clinical-hours-table td {
+        padding: 0.6em 0.75em;
+    }
+    #clinical-hours-table {
+        min-width: 400px;
+        font-size: 0.85em;
+    }
+
+    #qrcode {
+        min-width: 140px;
+        min-height: 140px;
+        padding: var(--space-md);
+    }
+}
