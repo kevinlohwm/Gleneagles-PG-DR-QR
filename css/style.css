@@ -116,12 +116,12 @@ header span {
 .doctor-name {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #007bff; /* Primary Blue for name */
+    color: #00769c; /* Primary Blue for name */
 }
 
 .doctor-speciality {
     font-size: 1rem;
-    color: #555;
+    color: #28b0b2;
     margin-bottom: 0.25rem;
 }
 
