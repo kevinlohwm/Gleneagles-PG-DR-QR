@@ -1307,6 +1307,20 @@ function setupIndexPage() {
     const allDoctorsListContainer = document.getElementById('all-doctors-list-container');
     const allSpecialitiesListContainer = document.getElementById('all-specialities-list-container');
 
+    function formatClinicalHoursForVCard_IndexPage(clinicalHours) {
+        let note = "Clinical Hours:\\n"; // Using \\n for newline in vCard NOTE
+        clinicalHours.forEach(item => {
+            let slots = [];
+            if (item.slot1) slots.push("0830-1300");
+            if (item.slot2) slots.push("1400-1630");
+            if (item.slot3) slots.push("1830-2030");
+            if (slots.length > 0) {
+                note += `${item.day}: ${slots.join(', ')}\\n`;
+            }
+        });
+        return note.trimEnd(); // Remove last \\n if any
+    }
+
     // Centralized function to perform search and render cards
     function filterAndRenderDoctors() {
         const nameQuery = searchNameInput.value.toLowerCase();
@@ -1339,11 +1353,44 @@ function setupIndexPage() {
                     <p class="doctor-type">${doctor.type}</p>
                     <div class="doctor-card-buttons">
                         <button class="view-profile-btn" data-doctorid="${doctor.id}">View Profile</button>
-                        <a href="mailto:appointments@gleneaglespenang.com.my?subject=Appointment Request for ${doctor.name}" class="request-appointment-btn">Request an Appointment</a>
+                        <div id="qrcode-${doctor.id}" class="doctor-qr-code"></div>
                     </div>
                 </div>
             `;
             doctorCardsContainer.insertAdjacentHTML('beforeend', card);
+
+            // QR Code generation
+            if (typeof QRCode !== 'undefined') {
+                let noteContent = formatClinicalHoursForVCard_IndexPage(doctor.clinicalHours);
+                let emailField = doctor.email ? `EMAIL:${doctor.email}\\n` : '';
+
+                const vCardString = `BEGIN:VCARD
+VERSION:3.0
+FN:${doctor.name}
+ORG:Gleneagles Hospital Penang
+TEL;TYPE=WORK,VOICE:${doctor.phone}
+${emailField}TITLE:${doctor.speciality}
+NOTE:${noteContent}
+END:VCARD`;
+
+                const qrElement = document.getElementById(`qrcode-${doctor.id}`);
+                if (qrElement && vCardString.trim() !== '') {
+                    new QRCode(qrElement, {
+                        text: vCardString,
+                        width: 100, // Adjusted size for card
+                        height: 100, // Adjusted size for card
+                        colorDark : "#000000",
+                        colorLight : "#ffffff",
+                        correctLevel : QRCode.CorrectLevel.L // Use L for smaller QR codes
+                    });
+                } else if (qrElement) {
+                    qrElement.innerHTML = '<p style="font-size:8px; text-align:center;">QR Error</p>';
+                }
+            } else {
+                const qrElement = document.getElementById(`qrcode-${doctor.id}`);
+                if (qrElement) qrElement.innerHTML = '<p style="font-size:8px; text-align:center;">Lib Error</p>';
+                console.error("QRCode library not loaded for doctor card QR.");
+            }
         });
 
         const viewProfileButtons = document.querySelectorAll('.view-profile-btn');

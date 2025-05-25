@@ -309,6 +309,24 @@ header span {
     color: var(--neutral-white);
 }
 
+.doctor-qr-code {
+    width: 112px; /* 100px for QR + 5px padding on each side + 1px border on each side */
+    height: 112px; /* Matches width for a square container */
+    margin-top: var(--space-sm); /* Smaller margin for card context */
+    padding: 5px; /* Small padding around the QR code */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-std);
+    align-self: center; /* Center it within the flex column of .doctor-card-buttons */
+    background-color: var(--neutral-white); /* Ensure background for QR code visibility */
+}
+
+.doctor-qr-code img,
+.doctor-qr-code canvas {
+    display: block; /* Remove extra space below canvas/img */
+    width: 100% !important; /* Ensure QR code fills the padding box */
+    height: 100% !important; /* Ensure QR code fills the padding box */
+}
+
 
 /* Footer */
 footer {
