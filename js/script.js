@@ -1393,11 +1393,47 @@ function setupIndexPage() {
             // }
 
             // QR Code generation using qrious.min.js
-            if (typeof QRious !== 'undefined') {
-                let noteContent = formatClinicalHoursForVCard_IndexPage(doctor.clinicalHours);
-                let emailField = doctor.email ? `EMAIL:${doctor.email}\\n` : '';
+            // if (typeof QRious !== 'undefined') {
+            //     let noteContent = formatClinicalHoursForVCard_IndexPage(doctor.clinicalHours);
+            //     let emailField = doctor.email ? `EMAIL:${doctor.email}\\n` : '';
 
-                const vCardString = `BEGIN:VCARD
+            //     const vCardString = `BEGIN:VCARD
+            // VERSION:3.0
+            // FN:${doctor.name}
+            // ORG:Gleneagles Hospital Penang
+            // TEL;TYPE=WORK,VOICE:${doctor.phone}
+            // ${emailField}TITLE:${doctor.speciality}
+            // NOTE:${noteContent}
+            // END:VCARD`;
+
+            //     const qrElement = document.getElementById(`qrcode-${doctor.id}`);
+            //     if (qrElement && vCardString.trim() !== '') {
+            //         new QRious({
+            //             element: qrElement,
+            //             value: vCardString,
+            //             size: 100,
+            //             level: 'L' // L, M, Q, H
+            //         });
+            //     } else if (qrElement) {
+            //         // This case might not be reached if vCardString is always populated,
+            //         // but good for robustness if fields could be missing.
+            //         qrElement.innerHTML = '<p style="font-size:8px; text-align:center;">Data Err</p>';
+            //     }
+            // } else {
+            //     const qrElement = document.getElementById(`qrcode-${doctor.id}`);
+            //     if (qrElement) qrElement.innerHTML = '<p style="font-size:8px; text-align:center;">Lib NF</p>'; // Library Not Found
+            //     console.error("QRious library not loaded for doctor card QR.");
+            // }
+
+            // QR Code generation using qrcode.js (David Shim)
+            if (typeof QRCode !== 'undefined') {
+                const qrElement = document.getElementById(`qrcode-${doctor.id}`);
+                if (qrElement) {
+                    qrElement.innerHTML = ''; // Clear previous QR code
+
+                    let noteContent = formatClinicalHoursForVCard_IndexPage(doctor.clinicalHours);
+                    let emailField = doctor.email ? `EMAIL:${doctor.email}\\n` : '';
+                    const vCardString = `BEGIN:VCARD
 VERSION:3.0
 FN:${doctor.name}
 ORG:Gleneagles Hospital Penang
@@ -1406,23 +1442,25 @@ ${emailField}TITLE:${doctor.speciality}
 NOTE:${noteContent}
 END:VCARD`;
 
-                const qrElement = document.getElementById(`qrcode-${doctor.id}`);
-                if (qrElement && vCardString.trim() !== '') {
-                    new QRious({
-                        element: qrElement,
-                        value: vCardString,
-                        size: 100,
-                        level: 'L' // L, M, Q, H
-                    });
-                } else if (qrElement) {
-                    // This case might not be reached if vCardString is always populated,
-                    // but good for robustness if fields could be missing.
-                    qrElement.innerHTML = '<p style="font-size:8px; text-align:center;">Data Err</p>';
+                    if (vCardString.trim() !== '') {
+                        new QRCode(qrElement, {
+                            text: vCardString,
+                            width: 100,
+                            height: 100,
+                            colorDark : "#000000",
+                            colorLight : "#ffffff",
+                            correctLevel : QRCode.CorrectLevel.L
+                        });
+                    } else {
+                        qrElement.innerHTML = '<p style="font-size:8px; text-align:center;">Data Err</p>';
+                    }
+                } else {
+                    // console.error(`QR Element qrcode-${doctor.id} not found.`); // Already handled by previous logic if needed
                 }
             } else {
                 const qrElement = document.getElementById(`qrcode-${doctor.id}`);
-                if (qrElement) qrElement.innerHTML = '<p style="font-size:8px; text-align:center;">Lib NF</p>'; // Library Not Found
-                console.error("QRious library not loaded for doctor card QR.");
+                if (qrElement) qrElement.innerHTML = '<p style="font-size:8px; text-align:center;">Lib NF</p>';
+                console.error("QRCode library (davidshimjs) not loaded for doctor card QR.");
             }
         });
 
@@ -1649,11 +1687,51 @@ function setupDetailPage() {
         }
 
         // QR Code generation using qrious.min.js
+        // const qrContainer = document.getElementById('qrcode');
+        // if (qrContainer) {
+        //     qrContainer.innerHTML = ''; // Clear any previous QR code or placeholder text
+
+        //     if (typeof QRious !== 'undefined') { // Check if QRious library is loaded
+        //         let noteContent = `Speciality: ${doctor.speciality}. `;
+        //         if (doctor.subSpeciality && doctor.subSpeciality !== "N/A") {
+        //             noteContent += `Sub-Speciality: ${doctor.subSpeciality}. `;
+        //         }
+        //         noteContent += formatClinicalHoursForVCard(doctor.clinicalHours);
+
+        //         const vCardString = `BEGIN:VCARD
+        // VERSION:3.0
+        // FN:${doctor.name}
+        // ORG:Gleneagles Hospital Penang
+        // TEL;TYPE=WORK,VOICE:${doctor.phone}
+        // ADR;TYPE=WORK:;;${doctor.location.replace("Gleneagles Hospital Penang, ", "")};Gleneagles Hospital Penang;;;;
+        // EMAIL:${doctor.email || 'appointments@gleneaglespenang.com.my'}
+        // NOTE:${noteContent}
+        // END:VCARD`;
+
+        //         if (vCardString && vCardString.trim() !== '') {
+        //             new QRious({
+        //                 element: qrContainer,
+        //                 value: vCardString,
+        //                 size: 200,
+        //                 level: 'H' // High error correction
+        //             });
+        //         } else {
+        //             qrContainer.innerHTML = '<p>Error: Could not generate vCard data for QRious.</p>';
+        //         }
+        //     } else {
+        //         qrContainer.innerHTML = '<p>Error: QRious library not loaded.</p>';
+        //         console.error("QRious library not loaded for doctor detail page QR.");
+        //     }
+        // } else {
+        //     console.error("Error: QR code target element #qrcode not found for QRious usage!");
+        // }
+
+        // QR Code generation using qrcode.js (David Shim)
         const qrContainer = document.getElementById('qrcode');
         if (qrContainer) {
             qrContainer.innerHTML = ''; // Clear any previous QR code or placeholder text
 
-            if (typeof QRious !== 'undefined') { // Check if QRious library is loaded
+            if (typeof QRCode !== 'undefined') { // Check if QRCode library is loaded
                 let noteContent = `Speciality: ${doctor.speciality}. `;
                 if (doctor.subSpeciality && doctor.subSpeciality !== "N/A") {
                     noteContent += `Sub-Speciality: ${doctor.subSpeciality}. `;
@@ -1671,21 +1749,23 @@ NOTE:${noteContent}
 END:VCARD`;
 
                 if (vCardString && vCardString.trim() !== '') {
-                    new QRious({
-                        element: qrContainer,
-                        value: vCardString,
-                        size: 200,
-                        level: 'H' // High error correction
+                    new QRCode(qrContainer, {
+                        text: vCardString,
+                        width: 200,
+                        height: 200,
+                        colorDark : "#000000",
+                        colorLight : "#ffffff",
+                        correctLevel : QRCode.CorrectLevel.H
                     });
                 } else {
-                    qrContainer.innerHTML = '<p>Error: Could not generate vCard data for QRious.</p>';
+                    qrContainer.innerHTML = '<p>Error: Could not generate vCard data for QRCode.</p>';
                 }
             } else {
-                qrContainer.innerHTML = '<p>Error: QRious library not loaded.</p>';
-                console.error("QRious library not loaded for doctor detail page QR.");
+                qrContainer.innerHTML = '<p>Error: QRCode library (davidshimjs) not loaded.</p>';
+                console.error("QRCode library (davidshimjs) not loaded for doctor detail page QR.");
             }
         } else {
-            console.error("Error: QR code target element #qrcode not found for QRious usage!");
+            console.error("Error: QR code target element #qrcode not found for QRCode (davidshimjs) usage!");
         }
     }
 
