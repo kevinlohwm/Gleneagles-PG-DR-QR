@@ -4,6 +4,7 @@ const doctorsData = [
         name: "Dr. Emily Carter",
         photo: "assets/images/placeholder_doctor_1.png",
         speciality: "Cardiology",
+        subSpeciality: "N/A", 
         type: "Resident",
         qualifications: "MD (Harvard), FACC",
         languages: ["English", "Spanish"],
@@ -25,6 +26,7 @@ const doctorsData = [
         name: "Dr. Benjamin Lee",
         photo: "assets/images/placeholder_doctor_2.png",
         speciality: "Neurology",
+        subSpeciality: "N/A", 
         type: "Sessional",
         qualifications: "MBBS (King's College), MRCP (UK)",
         languages: ["English", "Mandarin", "Malay"],
@@ -46,6 +48,7 @@ const doctorsData = [
         name: "Dr. Aisha Khan",
         photo: "assets/images/placeholder_doctor_3.png",
         speciality: "Pediatrics",
+        subSpeciality: "N/A", 
         type: "Resident",
         qualifications: "MBChB (Edinburgh), DCH",
         languages: ["English", "Urdu"],
@@ -67,6 +70,7 @@ const doctorsData = [
         name: "Dr. David Tan",
         photo: "assets/images/placeholder_doctor_4.png",
         speciality: "Orthopedics",
+        subSpeciality: "N/A", 
         type: "Sessional",
         qualifications: "MBBS (NUS), FRCS (Orth)",
         languages: ["English", "Mandarin", "Hokkien"],
@@ -88,6 +92,7 @@ const doctorsData = [
         name: "Dr. Sarah Chen",
         photo: "assets/images/placeholder_doctor_1.png",
         speciality: "Pediatrics",
+        subSpeciality: "Pediatric Cardiology", 
         type: "Sessional",
         qualifications: "MBBS (University Malaya), MRCPCH (UK)",
         languages: ["English", "Mandarin", "Malay"],
@@ -109,6 +114,7 @@ const doctorsData = [
         name: "Dr. Michael Raj",
         photo: "assets/images/placeholder_doctor_2.png",
         speciality: "Oncology",
+        subSpeciality: "N/A", 
         type: "Resident",
         qualifications: "MD (UPM), MRCP (UK)",
         languages: ["English", "Tamil", "Malay"],
@@ -130,6 +136,7 @@ const doctorsData = [
         name: "Dr. Fiona Lim",
         photo: "assets/images/placeholder_doctor_3.png",
         speciality: "Dermatology",
+        subSpeciality: "Cosmetic Dermatology", 
         type: "Sessional",
         qualifications: "MBBS (Sydney), DipDerm (Cardiff)",
         languages: ["English", "Mandarin"],
@@ -151,6 +158,7 @@ const doctorsData = [
         name: "Dr. Kevin O'Connell",
         photo: "assets/images/placeholder_doctor_4.png",
         speciality: "General Surgery",
+        subSpeciality: "Colorectal Surgery", 
         type: "Resident",
         qualifications: "MB BCh BAO (NUI), FRCSI",
         languages: ["English"],
@@ -172,6 +180,7 @@ const doctorsData = [
         name: "Dr. Siti Fatimah",
         photo: "assets/images/placeholder_doctor_1.png",
         speciality: "Obstetrics & Gynaecology",
+        subSpeciality: "N/A", 
         type: "Resident",
         qualifications: "MD (UKM), MOG (UKM)",
         languages: ["Malay", "English"],
@@ -193,6 +202,7 @@ const doctorsData = [
         name: "Dr. Alan Wong",
         photo: "assets/images/placeholder_doctor_2.png",
         speciality: "Psychiatry",
+        subSpeciality: "N/A", 
         type: "Sessional",
         qualifications: "MBBS (HKU), MMed (Psych)",
         languages: ["English", "Cantonese", "Mandarin"],
@@ -214,6 +224,7 @@ const doctorsData = [
         name: "Dr. Isabella Rossi",
         photo: "assets/images/placeholder_doctor_3.png",
         speciality: "Endocrinology",
+        subSpeciality: "N/A", 
         type: "Resident",
         qualifications: "MD (Pavia), Specialist in Endocrinology",
         languages: ["English", "Italian"],
@@ -235,6 +246,7 @@ const doctorsData = [
         name: "Dr. Kenji Tanaka",
         photo: "assets/images/placeholder_doctor_4.png",
         speciality: "Urology",
+        subSpeciality: "N/A", 
         type: "Sessional",
         qualifications: "MD (Tokyo), PhD",
         languages: ["English", "Japanese"],
@@ -256,6 +268,7 @@ const doctorsData = [
         name: "Dr. Olivia Ng",
         photo: "assets/images/placeholder_doctor_1.png",
         speciality: "Rheumatology",
+        subSpeciality: "N/A", 
         type: "Resident",
         qualifications: "MBBS (Monash), FRACP",
         languages: ["English", "Mandarin"],
@@ -277,6 +290,7 @@ const doctorsData = [
         name: "Dr. Ahmed Hassan",
         photo: "assets/images/placeholder_doctor_2.png",
         speciality: "Nephrology",
+        subSpeciality: "N/A", 
         type: "Sessional",
         qualifications: "MBChB (Cairo), MRCP (UK)",
         languages: ["English", "Arabic", "Malay"],
@@ -298,6 +312,7 @@ const doctorsData = [
         name: "Dr. Chloe Dubois",
         photo: "assets/images/placeholder_doctor_3.png",
         speciality: "Geriatrics",
+        subSpeciality: "N/A", 
         type: "Resident",
         qualifications: "MD (Sorbonne), Specialist in Geriatric Medicine",
         languages: ["English", "French"],
@@ -319,6 +334,7 @@ const doctorsData = [
         name: "Dr. Marcus Yeoh",
         photo: "assets/images/placeholder_doctor_4.png",
         speciality: "Sports Medicine",
+        subSpeciality: "N/A", 
         type: "Sessional",
         qualifications: "MBBS (Melbourne), MSpMed",
         languages: ["English", "Malay"],
@@ -340,6 +356,7 @@ const doctorsData = [
         name: "Dr. Priya Sharma",
         photo: "assets/images/placeholder_doctor_1.png",
         speciality: "Ophthalmology",
+        subSpeciality: "N/A", 
         type: "Resident",
         qualifications: "MBBS (Delhi), MS (Ophth)",
         languages: ["English", "Hindi"],
@@ -361,6 +378,7 @@ const doctorsData = [
         name: "Dr. Ivan Petrov",
         photo: "assets/images/placeholder_doctor_2.png",
         speciality: "Plastic Surgery",
+        subSpeciality: "N/A", 
         type: "Sessional",
         qualifications: "MD (Moscow), Board Certified Plastic Surgeon",
         languages: ["English", "Russian"],
@@ -382,6 +400,7 @@ const doctorsData = [
         name: "Dr. Ananya Rao",
         photo: "assets/images/placeholder_doctor_3.png",
         speciality: "Infectious Diseases",
+        subSpeciality: "N/A", 
         type: "Resident",
         qualifications: "MBBS (Bangalore), DTM&H (London)",
         languages: ["English", "Kannada", "Malay"],
@@ -403,6 +422,7 @@ const doctorsData = [
         name: "Dr. Charles Brown",
         photo: "assets/images/placeholder_doctor_4.png",
         speciality: "Emergency Medicine",
+        subSpeciality: "N/A", 
         type: "Resident",
         qualifications: "MD (Johns Hopkins), FACEP",
         languages: ["English"],
@@ -539,12 +559,12 @@ function setupIndexPage() {
 
         specialities.forEach(speciality => {
             const listItem = document.createElement('div');
-            listItem.classList.add('speciality-list-item'); // Use a specific class if needed
+            listItem.classList.add('speciality-list-item'); 
             listItem.textContent = speciality;
             
             listItem.addEventListener('click', () => {
                 searchSpecialityInput.value = speciality;
-                filterAndRenderDoctors(); // Trigger main search
+                filterAndRenderDoctors(); 
                 allSpecialitiesListContainer.style.display = 'none';
             });
             allSpecialitiesListContainer.appendChild(listItem);
@@ -621,6 +641,7 @@ function setupDetailPage() {
     const doctorDetailName = document.getElementById('doctor-detail-name');
     const doctorDetailType = document.getElementById('doctor-detail-type');
     const doctorDetailSpeciality = document.getElementById('doctor-detail-speciality');
+    const doctorDetailSubSpeciality = document.getElementById('doctor-detail-subspeciality');
     const doctorDetailQualifications = document.getElementById('doctor-detail-qualifications');
     const doctorDetailLanguages = document.getElementById('doctor-detail-languages');
     const doctorDetailLocation = document.getElementById('doctor-detail-location');
@@ -628,7 +649,7 @@ function setupDetailPage() {
     const detailRequestAppointmentBtn = document.getElementById('detail-request-appointment-btn');
     const clinicalHoursTableBody = document.querySelector('#clinical-hours-table tbody');
     
-    const qrElement = document.getElementById('qrcode'); 
+    const qrElement = document.getElementById('qrcode'); // Keep for potential "No doctor ID" message
 
     function getDoctorIdFromURL() {
         const params = new URLSearchParams(window.location.search);
@@ -666,6 +687,16 @@ function setupDetailPage() {
         if (doctorDetailName) doctorDetailName.textContent = doctor.name;
         if (doctorDetailType) doctorDetailType.textContent = doctor.type;
         if (doctorDetailSpeciality) doctorDetailSpeciality.textContent = doctor.speciality;
+        
+        if (doctorDetailSubSpeciality) {
+            doctorDetailSubSpeciality.textContent = doctor.subSpeciality || "N/A";
+            if (!doctor.subSpeciality || doctor.subSpeciality === "N/A") {
+                doctorDetailSubSpeciality.parentElement.style.display = 'none';
+            } else {
+                doctorDetailSubSpeciality.parentElement.style.display = '';
+            }
+        }
+        
         if (doctorDetailQualifications) doctorDetailQualifications.textContent = doctor.qualifications;
         if (doctorDetailLanguages) doctorDetailLanguages.textContent = doctor.languages.join(', ');
         if (doctorDetailLocation) doctorDetailLocation.textContent = doctor.location;
@@ -688,35 +719,47 @@ function setupDetailPage() {
             });
         }
 
-        const currentQrElement = document.getElementById('qrcode'); 
-        if (currentQrElement && typeof QRious !== 'undefined') {
-            const vCardString = `BEGIN:VCARD
+        // QR Code generation using qrcode.js (davidshimjs)
+        const qrContainer = document.getElementById('qrcode'); // Re-fetch for local scope
+        if (qrContainer) {
+            qrContainer.innerHTML = ''; // Clear any previous QR code or placeholder text
+
+            if (typeof QRCode !== 'undefined') { // Check if the new library is loaded
+                let noteContent = `Speciality: ${doctor.speciality}. `;
+                if (doctor.subSpeciality && doctor.subSpeciality !== "N/A") {
+                    noteContent += `Sub-Speciality: ${doctor.subSpeciality}. `;
+                }
+                noteContent += formatClinicalHoursForVCard(doctor.clinicalHours);
+
+                const vCardString = `BEGIN:VCARD
 VERSION:3.0
 FN:${doctor.name}
 ORG:Gleneagles Hospital Penang
 TEL;TYPE=WORK,VOICE:${doctor.phone}
 ADR;TYPE=WORK:;;${doctor.location.replace("Gleneagles Hospital Penang, ", "")};Gleneagles Hospital Penang;;;;
 EMAIL:${doctor.email || 'appointments@gleneaglespenang.com.my'}
-NOTE:Speciality: ${doctor.speciality}. ${formatClinicalHoursForVCard(doctor.clinicalHours)}
+NOTE:${noteContent}
 END:VCARD`;
 
-            if (!vCardString || vCardString.trim() === '') {
-                if(currentQrElement) currentQrElement.innerHTML = '<p>Error: Could not generate vCard data.</p>';
-                return; 
+                if (!vCardString || vCardString.trim() === '') {
+                    if(qrContainer) qrContainer.innerHTML = '<p>Error: Could not generate vCard data.</p>';
+                    return; 
+                }
+                
+                new QRCode(qrContainer, {
+                    text: vCardString,
+                    width: 200,
+                    height: 200,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+            } else {
+                qrContainer.innerHTML = '<p>Error: QR Code library (qrcode.js) not loaded.</p>';
+                console.error("QRCode library (qrcode.js by davidshimjs) is not loaded.");
             }
-
-            currentQrElement.innerHTML = ''; 
-            new QRious({
-                element: currentQrElement, 
-                value: vCardString,
-                size: 200,
-                level: 'H', 
-                padding: 10,
-                background: '#f9f9f9', 
-                foreground: '#333'
-            });
-        } else if (currentQrElement) {
-            currentQrElement.innerHTML = '<p>QR code generation failed. Library not loaded or element issue.</p>';
+        } else {
+            console.error("Error: QR code target element #qrcode not found for davidshimjs usage!");
         }
     }
 
@@ -728,7 +771,7 @@ END:VCARD`;
         if (mainContainer) {
             mainContainer.innerHTML = '<h1>No Doctor ID Provided</h1><p>Please select a doctor from the listing page.</p><a href="index.html">Back to search</a>';
         }
-        if(qrElement) qrElement.innerHTML = '<p>No doctor ID provided.</p>';
+        if(qrElement) qrElement.innerHTML = '<p>No doctor ID provided.</p>'; // Update original qrElement reference
     }
 }
 

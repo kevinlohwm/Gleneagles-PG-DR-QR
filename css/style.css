@@ -380,6 +380,13 @@ main.container { /* Specific to doctor_detail.html's main area */
     font-weight: 500;
 }
 
+/* Specific style for sub-speciality span if needed, though it inherits from p */
+#doctor-detail-subspeciality {
+    /* Example: font-style: italic; if you want to style "N/A" or the value itself */
+    /* JavaScript already handles hiding the parent <p> if value is "N/A" */
+}
+
+
 #detail-request-appointment-btn {
     display: inline-block;
     margin-top: var(--space-md);
