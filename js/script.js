@@ -12,13 +12,13 @@ const doctorsData = [
         phone: "+604-222-9101",
         email: "emily.carter@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday",    slot1: true,  slot2: true },
-            { day: "Tuesday",   slot1: false, slot2: true },
-            { day: "Wednesday", slot1: true,  slot2: false },
-            { day: "Thursday",  slot1: true,  slot2: true },
-            { day: "Friday",    slot1: false, slot2: true },
-            { day: "Saturday",  slot1: true,  slot2: false },
-            { day: "Sunday",    slot1: false, slot2: false }
+            { day: "Monday",    slot1: true,  slot2: true, slot3: false },
+            { day: "Tuesday",   slot1: false, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true,  slot2: false, slot3: false },
+            { day: "Thursday",  slot1: true,  slot2: true, slot3: false },
+            { day: "Friday",    slot1: false, slot2: true, slot3: false },
+            { day: "Saturday",  slot1: true,  slot2: false, slot3: false },
+            { day: "Sunday",    slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -34,13 +34,13 @@ const doctorsData = [
         phone: "+604-222-9205",
         email: "benjamin.lee@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday",    slot1: true,  slot2: false },
-            { day: "Tuesday",   slot1: true,  slot2: true },
-            { day: "Wednesday", slot1: false, slot2: true },
-            { day: "Thursday",  slot1: true,  slot2: false },
-            { day: "Friday",    slot1: true,  slot2: true },
-            { day: "Saturday",  slot1: false, slot2: false },
-            { day: "Sunday",    slot1: false, slot2: false }
+            { day: "Monday",    slot1: true,  slot2: false, slot3: false },
+            { day: "Tuesday",   slot1: true,  slot2: true, slot3: false },
+            { day: "Wednesday", slot1: false, slot2: true, slot3: false },
+            { day: "Thursday",  slot1: true,  slot2: false, slot3: false },
+            { day: "Friday",    slot1: true,  slot2: true, slot3: false },
+            { day: "Saturday",  slot1: false, slot2: false, slot3: false },
+            { day: "Sunday",    slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -56,13 +56,13 @@ const doctorsData = [
         phone: "+604-222-9312",
         email: "aisha.khan@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday",    slot1: true, slot2: true },
-            { day: "Tuesday",   slot1: true, slot2: true },
-            { day: "Wednesday", slot1: true, slot2: true },
-            { day: "Thursday",  slot1: false, slot2: true },
-            { day: "Friday",    slot1: true, slot2: false },
-            { day: "Saturday",  slot1: false, slot2: false },
-            { day: "Sunday",    slot1: false, slot2: false }
+            { day: "Monday",    slot1: true, slot2: true, slot3: false },
+            { day: "Tuesday",   slot1: true, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: true, slot3: false },
+            { day: "Thursday",  slot1: false, slot2: true, slot3: false },
+            { day: "Friday",    slot1: true, slot2: false, slot3: false },
+            { day: "Saturday",  slot1: false, slot2: false, slot3: false },
+            { day: "Sunday",    slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -78,13 +78,13 @@ const doctorsData = [
         phone: "+604-222-9115",
         email: "david.tan@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday",    slot1: false, slot2: true },
-            { day: "Tuesday",   slot1: true,  slot2: false },
-            { day: "Wednesday", slot1: false, slot2: true },
-            { day: "Thursday",  slot1: true,  slot2: false },
-            { day: "Friday",    slot1: true,  slot2: true },
-            { day: "Saturday",  slot1: true,  slot2: false },
-            { day: "Sunday",    slot1: false, slot2: false }
+            { day: "Monday",    slot1: false, slot2: true, slot3: false },
+            { day: "Tuesday",   slot1: true,  slot2: false, slot3: false },
+            { day: "Wednesday", slot1: false, slot2: true, slot3: false },
+            { day: "Thursday",  slot1: true,  slot2: false, slot3: false },
+            { day: "Friday",    slot1: true,  slot2: true, slot3: false },
+            { day: "Saturday",  slot1: true,  slot2: false, slot3: false },
+            { day: "Sunday",    slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -100,13 +100,13 @@ const doctorsData = [
         phone: "+604-222-9206",
         email: "sarah.chen@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: false },
-            { day: "Tuesday", slot1: true, slot2: true },
-            { day: "Wednesday", slot1: false, slot2: false },
-            { day: "Thursday", slot1: true, slot2: true },
-            { day: "Friday", slot1: true, slot2: false },
-            { day: "Saturday", slot1: false, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: false, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: false, slot2: false, slot3: false },
+            { day: "Thursday", slot1: true, slot2: true, slot3: false },
+            { day: "Friday", slot1: true, slot2: false, slot3: false },
+            { day: "Saturday", slot1: false, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -122,13 +122,13 @@ const doctorsData = [
         phone: "+604-222-9301",
         email: "michael.raj@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: true },
-            { day: "Tuesday", slot1: true, slot2: true },
-            { day: "Wednesday", slot1: true, slot2: true },
-            { day: "Thursday", slot1: true, slot2: true },
-            { day: "Friday", slot1: true, slot2: false },
-            { day: "Saturday", slot1: false, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: true, slot3: false },
+            { day: "Thursday", slot1: true, slot2: true, slot3: false },
+            { day: "Friday", slot1: true, slot2: false, slot3: false },
+            { day: "Saturday", slot1: false, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -144,13 +144,13 @@ const doctorsData = [
         phone: "+604-222-9402",
         email: "fiona.lim@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: false, slot2: true },
-            { day: "Tuesday", slot1: false, slot2: true },
-            { day: "Wednesday", slot1: true, slot2: false },
-            { day: "Thursday", slot1: false, slot2: true },
-            { day: "Friday", slot1: true, slot2: false },
-            { day: "Saturday", slot1: true, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: false, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: false, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: false, slot3: false },
+            { day: "Thursday", slot1: false, slot2: true, slot3: false },
+            { day: "Friday", slot1: true, slot2: false, slot3: false },
+            { day: "Saturday", slot1: true, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -166,13 +166,13 @@ const doctorsData = [
         phone: "+604-222-9108",
         email: "kevin.oconnell@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: true },
-            { day: "Tuesday", slot1: true, slot2: false },
-            { day: "Wednesday", slot1: true, slot2: true },
-            { day: "Thursday", slot1: true, slot2: false },
-            { day: "Friday", slot1: true, slot2: true },
-            { day: "Saturday", slot1: true, slot2: true }, 
-            { day: "Sunday", slot1: true, slot2: true }
+            { day: "Monday", slot1: true, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: false, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: true, slot3: false },
+            { day: "Thursday", slot1: true, slot2: false, slot3: false },
+            { day: "Friday", slot1: true, slot2: true, slot3: false },
+            { day: "Saturday", slot1: true, slot2: true, slot3: false }, 
+            { day: "Sunday", slot1: true, slot2: true, slot3: false }
         ]
     },
     {
@@ -188,13 +188,13 @@ const doctorsData = [
         phone: "+604-222-9210",
         email: "siti.fatimah@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: true },
-            { day: "Tuesday", slot1: true, slot2: true },
-            { day: "Wednesday", slot1: false, slot2: true },
-            { day: "Thursday", slot1: true, slot2: true },
-            { day: "Friday", slot1: true, slot2: false },
-            { day: "Saturday", slot1: true, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: false, slot2: true, slot3: false },
+            { day: "Thursday", slot1: true, slot2: true, slot3: false },
+            { day: "Friday", slot1: true, slot2: false, slot3: false },
+            { day: "Saturday", slot1: true, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -210,13 +210,13 @@ const doctorsData = [
         phone: "+604-222-9315",
         email: "alan.wong@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: false },
-            { day: "Tuesday", slot1: false, slot2: true },
-            { day: "Wednesday", slot1: true, slot2: false },
-            { day: "Thursday", slot1: false, slot2: true },
-            { day: "Friday", slot1: true, slot2: false },
-            { day: "Saturday", slot1: false, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: false, slot3: false },
+            { day: "Tuesday", slot1: false, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: false, slot3: false },
+            { day: "Thursday", slot1: false, slot2: true, slot3: false },
+            { day: "Friday", slot1: true, slot2: false, slot3: false },
+            { day: "Saturday", slot1: false, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -232,13 +232,13 @@ const doctorsData = [
         phone: "+604-222-9405",
         email: "isabella.rossi@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: true },
-            { day: "Tuesday", slot1: true, slot2: true },
-            { day: "Wednesday", slot1: true, slot2: false },
-            { day: "Thursday", slot1: true, slot2: true },
-            { day: "Friday", slot1: true, slot2: false },
-            { day: "Saturday", slot1: false, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: false, slot3: false },
+            { day: "Thursday", slot1: true, slot2: true, slot3: false },
+            { day: "Friday", slot1: true, slot2: false, slot3: false },
+            { day: "Saturday", slot1: false, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -254,13 +254,13 @@ const doctorsData = [
         phone: "+604-222-9120",
         email: "kenji.tanaka@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: false, slot2: true },
-            { day: "Tuesday", slot1: true, slot2: false },
-            { day: "Wednesday", slot1: false, slot2: true },
-            { day: "Thursday", slot1: true, slot2: false },
-            { day: "Friday", slot1: false, slot2: true },
-            { day: "Saturday", slot1: true, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: false, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: false, slot3: false },
+            { day: "Wednesday", slot1: false, slot2: true, slot3: false },
+            { day: "Thursday", slot1: true, slot2: false, slot3: false },
+            { day: "Friday", slot1: false, slot2: true, slot3: false },
+            { day: "Saturday", slot1: true, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -276,13 +276,13 @@ const doctorsData = [
         phone: "+604-222-9222",
         email: "olivia.ng@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: false },
-            { day: "Tuesday", slot1: true, slot2: false },
-            { day: "Wednesday", slot1: true, slot2: true },
-            { day: "Thursday", slot1: true, slot2: false },
-            { day: "Friday", slot1: true, slot2: true },
-            { day: "Saturday", slot1: false, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: false, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: false, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: true, slot3: false },
+            { day: "Thursday", slot1: true, slot2: false, slot3: false },
+            { day: "Friday", slot1: true, slot2: true, slot3: false },
+            { day: "Saturday", slot1: false, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -298,13 +298,13 @@ const doctorsData = [
         phone: "+604-222-9325",
         email: "ahmed.hassan@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: true },
-            { day: "Tuesday", slot1: false, slot2: true },
-            { day: "Wednesday", slot1: true, slot2: true },
-            { day: "Thursday", slot1: false, slot2: true },
-            { day: "Friday", slot1: true, slot2: false },
-            { day: "Saturday", slot1: false, slot2: true },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: false, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: true, slot3: false },
+            { day: "Thursday", slot1: false, slot2: true, slot3: false },
+            { day: "Friday", slot1: true, slot2: false, slot3: false },
+            { day: "Saturday", slot1: false, slot2: true, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -320,13 +320,13 @@ const doctorsData = [
         phone: "+604-222-9410",
         email: "chloe.dubois@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: true },
-            { day: "Tuesday", slot1: true, slot2: true },
-            { day: "Wednesday", slot1: true, slot2: true },
-            { day: "Thursday", slot1: true, slot2: true },
-            { day: "Friday", slot1: true, slot2: true },
-            { day: "Saturday", slot1: false, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: true, slot3: false },
+            { day: "Thursday", slot1: true, slot2: true, slot3: false },
+            { day: "Friday", slot1: true, slot2: true, slot3: false },
+            { day: "Saturday", slot1: false, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -342,13 +342,13 @@ const doctorsData = [
         phone: "+604-222-9125",
         email: "marcus.yeoh@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: false, slot2: true },
-            { day: "Tuesday", slot1: true, slot2: true },
-            { day: "Wednesday", slot1: false, slot2: true },
-            { day: "Thursday", slot1: true, slot2: true },
-            { day: "Friday", slot1: false, slot2: true },
-            { day: "Saturday", slot1: true, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: false, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: false, slot2: true, slot3: false },
+            { day: "Thursday", slot1: true, slot2: true, slot3: false },
+            { day: "Friday", slot1: false, slot2: true, slot3: false },
+            { day: "Saturday", slot1: true, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -364,13 +364,13 @@ const doctorsData = [
         phone: "+604-222-9230",
         email: "priya.sharma@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: true },
-            { day: "Tuesday", slot1: true, slot2: false },
-            { day: "Wednesday", slot1: true, slot2: true },
-            { day: "Thursday", slot1: true, slot2: false },
-            { day: "Friday", slot1: true, slot2: true },
-            { day: "Saturday", slot1: true, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: false, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: true, slot3: false },
+            { day: "Thursday", slot1: true, slot2: false, slot3: false },
+            { day: "Friday", slot1: true, slot2: true, slot3: false },
+            { day: "Saturday", slot1: true, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -386,13 +386,13 @@ const doctorsData = [
         phone: "+604-222-9333",
         email: "ivan.petrov@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: false },
-            { day: "Tuesday", slot1: false, slot2: true },
-            { day: "Wednesday", slot1: true, slot2: false },
-            { day: "Thursday", slot1: false, slot2: true },
-            { day: "Friday", slot1: true, slot2: true },
-            { day: "Saturday", slot1: false, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: false, slot3: false },
+            { day: "Tuesday", slot1: false, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: false, slot3: false },
+            { day: "Thursday", slot1: false, slot2: true, slot3: false },
+            { day: "Friday", slot1: true, slot2: true, slot3: false },
+            { day: "Saturday", slot1: false, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -408,13 +408,13 @@ const doctorsData = [
         phone: "+604-222-9415",
         email: "ananya.rao@gleneaglespenang.com.my",
         clinicalHours: [
-            { day: "Monday", slot1: true, slot2: true },
-            { day: "Tuesday", slot1: true, slot2: true },
-            { day: "Wednesday", slot1: true, slot2: true },
-            { day: "Thursday", slot1: true, slot2: true },
-            { day: "Friday", slot1: false, slot2: true },
-            { day: "Saturday", slot1: false, slot2: false },
-            { day: "Sunday", slot1: false, slot2: false }
+            { day: "Monday", slot1: true, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: true, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: true, slot3: false },
+            { day: "Thursday", slot1: true, slot2: true, slot3: false },
+            { day: "Friday", slot1: false, slot2: true, slot3: false },
+            { day: "Saturday", slot1: false, slot2: false, slot3: false },
+            { day: "Sunday", slot1: false, slot2: false, slot3: false }
         ]
     },
     {
@@ -430,13 +430,13 @@ const doctorsData = [
         phone: "+604-222-9199", 
         email: "charles.brown@gleneaglespenang.com.my",
         clinicalHours: [ 
-            { day: "Monday", slot1: true, slot2: true },
-            { day: "Tuesday", slot1: false, slot2: true },
-            { day: "Wednesday", slot1: true, slot2: true },
-            { day: "Thursday", slot1: true, slot2: false },
-            { day: "Friday", slot1: true, slot2: true },
-            { day: "Saturday", slot1: true, slot2: true },
-            { day: "Sunday", slot1: true, slot2: true }
+            { day: "Monday", slot1: true, slot2: true, slot3: false },
+            { day: "Tuesday", slot1: false, slot2: true, slot3: false },
+            { day: "Wednesday", slot1: true, slot2: true, slot3: false },
+            { day: "Thursday", slot1: true, slot2: false, slot3: false },
+            { day: "Friday", slot1: true, slot2: true, slot3: false },
+            { day: "Saturday", slot1: true, slot2: true, slot3: false },
+            { day: "Sunday", slot1: true, slot2: true, slot3: false }
         ]
     }
 ];
@@ -662,6 +662,7 @@ function setupDetailPage() {
             let slots = [];
             if (item.slot1) slots.push("0830-1300");
             if (item.slot2) slots.push("1400-1630");
+            if (item.slot3) slots.push("1830-2030");
             if (slots.length > 0) {
                 note += `${item.day.substring(0,3)} (${slots.join(', ')}); `;
             }
@@ -713,6 +714,7 @@ function setupDetailPage() {
                         <td>${item.day}</td>
                         <td>${item.slot1 ? '&#10004;' : ''}</td>
                         <td>${item.slot2 ? '&#10004;' : ''}</td>
+                        <td>${item.slot3 ? '&#10004;' : ''}</td>
                     </tr>
                 `;
                 clinicalHoursTableBody.insertAdjacentHTML('beforeend', row);
