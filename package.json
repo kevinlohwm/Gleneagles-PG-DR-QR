@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "This project is a mini website designed for Gleneagles Hospital Penang, allowing patients to search for doctors by name or speciality. It also provides detailed profiles for each doctor, including a QR code to save their contact information.",
+  "main": "doctorsData.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinlohwm/Gleneagles-PG-DR-QR.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinlohwm/Gleneagles-PG-DR-QR/issues"
+  },
+  "homepage": "https://github.com/kevinlohwm/Gleneagles-PG-DR-QR#readme",
+  "dependencies": {
+    "puppeteer": "^24.9.0"
+  }
+}

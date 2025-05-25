@@ -371,8 +371,7 @@ const doctorsData = [
         "speciality": "General Surgery",
         "subSpeciality": "Colorectal Surgery",
         "type": "Resident",
-        "qualifications": "MBBS(Mal), MS(UKM), MRCS(Ire)
-FELLOWSHIP IN COLORECTAL SURGERY (Hull, England)",
+        "qualifications": "MBBS(Mal), MS(UKM), MRCS(Ire)\nFELLOWSHIP IN COLORECTAL SURGERY (Hull, England)",
         "languages": [
             "English",
             "Malay",
